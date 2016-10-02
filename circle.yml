@@ -1,0 +1,10 @@
+machine:
+  node:
+    version: 4.3
+  services:
+    - docker
+
+test:
+  override:
+    - docker build -t test .
+    

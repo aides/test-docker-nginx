@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM node:4
 EXPOSE 8000
 
 ENV NGINX_VERSION 1.11.4-1~jessie

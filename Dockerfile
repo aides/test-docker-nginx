@@ -21,7 +21,7 @@ RUN groupadd -r webgroup \
 #    && touch /var/log/nginx/error.log \
     && touch /run/nginx.pid \
 #    && mkdir -p /var/cache/nginx \
-#    && mkdir -p /var/lib/nginx \
+    && mkdir -p /var/lib/nginx \
     && chown -R webuser:webgroup /var/log/nginx /run/nginx.pid 
 
 USER webuser

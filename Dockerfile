@@ -1,14 +1,10 @@
-FROM node:4
+FROM ubuntu:14.04
 EXPOSE 8000
 
-ENV NGINX_VERSION 1.11.4-1~jessie
-
 # Install nginx
-RUN apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62 \
-    && echo "deb http://nginx.org/packages/mainline/debian/ jessie nginx" >> /etc/apt/sources.list \
-    && apt-get update -q \
+RUN apt-get update -q \
     && apt-get install --no-install-recommends --no-install-suggests -y -q \
-                        nginx=${NGINX_VERSION} \
+                        nginx \
     && rm -rf /var/lib/apt/lists/*
 
 COPY ./nginx.conf /etc/nginx/
